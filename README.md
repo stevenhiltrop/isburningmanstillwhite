@@ -2,6 +2,10 @@
 
 Checks to see if the Burning Man board of directors is still mostly white.
 
+# Setup and run
+`python3 -m pip install -r requirements.txt`
+`python3 face_colors.py`
+
 # Original Artists' Statement
 
 This is an art project by Zed A. Shaw and Greg Borenstein, who are both artists
