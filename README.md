@@ -3,8 +3,10 @@
 Checks to see if the Burning Man board of directors is still mostly white.
 
 # Setup and run
-`python3 -m pip install -r requirements.txt`
-`python3 face_colors.py images/`
+```python
+python3 -m pip install -r requirements.txt
+python3 face_colors.py images/
+```
 
 This wil create the index.html with your answer.
 
