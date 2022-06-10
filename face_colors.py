@@ -1,12 +1,10 @@
 import cv2 as opencv
-from PIL import Image
 import numpy as np
 import colorsys
 import math
-import sys
+import glob
 
-imgs = sys.argv[1:]
-
+images = images=glob.glob("images/*.jpg")
 face_cascade = opencv.CascadeClassifier("haarcascade_frontalface_alt.xml")
 
 r = 0
@@ -16,7 +14,7 @@ n_faces = 0
 
 gray_mean = 0
 
-for image in imgs:
+for image in images:
   color = opencv.imread(image)
   color_rgb = opencv.cvtColor(color, opencv.COLOR_BGR2RGB)
   gray = opencv.cvtColor(color, opencv.COLOR_BGR2GRAY)
@@ -36,6 +34,7 @@ for image in imgs:
     ## organize the data for kmeans
     hsv = opencv.split(color_face)
     
+    print(hsv[0])
     hsv[0] = hsv[0].reshape(hsv[0].shape[0]* hsv[0].shape[1],1)
     hsv[1] = hsv[1].reshape(hsv[1].shape[0]* hsv[1].shape[1],1)
     hsv[2] = hsv[2].reshape(hsv[2].shape[0]* hsv[2].shape[1],1)
