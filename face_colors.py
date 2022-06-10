@@ -33,16 +33,15 @@ for image in images:
 
     ## organize the data for kmeans
     hsv = opencv.split(color_face)
-    
-    print(hsv[0])
-    hsv[0] = hsv[0].reshape(hsv[0].shape[0]* hsv[0].shape[1],1)
-    hsv[1] = hsv[1].reshape(hsv[1].shape[0]* hsv[1].shape[1],1)
-    hsv[2] = hsv[2].reshape(hsv[2].shape[0]* hsv[2].shape[1],1)
+
+    hsv[0].reshape(hsv[0].shape[0] * hsv[0].shape[1])
+    hsv[1].reshape(hsv[1].shape[0] * hsv[1].shape[1])
+    hsv[2].reshape(hsv[2].shape[0] * hsv[2].shape[1])
 
     data = opencv.hconcat(hsv)
     ## run kmeans
     criteria = (opencv.TERM_CRITERIA_EPS, 1000, 0)
-    compactness,labels,centers =  opencv.kmeans(np.float32(data), 10, criteria, 10, opencv.KMEANS_RANDOM_CENTERS)
+    compactness,labels,centers = opencv.kmeans(np.float32(data), 10, None, criteria, 10, opencv.KMEANS_RANDOM_CENTERS)
 
     colors = []
 
