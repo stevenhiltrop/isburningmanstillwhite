@@ -6,6 +6,8 @@ Checks to see if the Burning Man board of directors is still mostly white.
 `python3 -m pip install -r requirements.txt`
 `python3 face_colors.py images/`
 
+This wil create the index.html with your answer.
+
 # Original Artists' Statement
 
 This is an art project by Zed A. Shaw and Greg Borenstein, who are both artists
@@ -25,5 +27,7 @@ You get it burner.  You *matter*.
 ;-)
 
 # Modifications
-* Trying to change the code to run in Go.
-* Wrote it using TDD, please have mercy on me.
+* Updated it with the current libraries.
+* The only files needed are:
+    * scrape.rb
+    * face_colors.py
